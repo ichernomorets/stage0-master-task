@@ -128,13 +128,14 @@ public class ArrayTasks {
 
         // arrange by ascending order by length
         for (int i = 0; i < sorted.length; ++i) {
-            for (int j = i+1; j < sorted.length; ++j) {
-                if (sorted[i].length > sorted[j].length) {
-                    int[] t = sorted[j];
-                    sorted[j] = sorted[i];
-                    sorted[i] = t;
+            for (int j = 0; j < sorted.length - i - 1; ++j) {
+                if (sorted[j].length > sorted[j+1].length) {
+                    int[] t = sorted[j+1];
+                    sorted[j+1] = sorted[j];
+                    sorted[j] = t;
                 }
             }
+
         }
 
         //sort numbers inside each array
